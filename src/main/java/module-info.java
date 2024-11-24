@@ -5,4 +5,6 @@ module com.example.krest_and_null {
 
     opens com.example.krest_and_null to javafx.fxml;
     exports com.example.krest_and_null;
+    exports com.example.krest_and_null.data;
+    opens com.example.krest_and_null.data to javafx.fxml;
 }
