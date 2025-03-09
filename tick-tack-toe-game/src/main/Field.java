@@ -14,12 +14,8 @@ public class Field {
         }
     }
 
-    public void printField() {
-        for (int i = 0; i < currentField.length; i++) {
-            for (int j = 0; j < currentField[i].length; j++) {
-                System.out.print(currentField[i][j] + " ");
-            }
-            System.out.println();
-        }
+    public void addMove(Coordinates coordinates, String currentPlayer) {
+        this.currentField[coordinates.row][coordinates.column] = currentPlayer;
     }
+
 }

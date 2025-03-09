@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d493b8a-2428-43be-bca7-30708d0c8551" name="Changes" comment="Start!">
-      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Input.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Output.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Сheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,23 +30,64 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zeddikus85&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zeddikus85/tick-tack-toe.git&quot;,
+    &quot;accountId&quot;: &quot;00c1f019-ab61-4990-97bf-6154ed15d311&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2oKWS5uLVfXhQ71Pa0Yc6OzExhw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tick-tack-toe-game/src" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Zeddikus\IdeaProjects\tick-tack-toe\tick-tack-toe-game\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="tick-tack-toe-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730620000452</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Start!">
+      <option name="closed" value="true" />
+      <created>1740834167391</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740834167391</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,5 +158,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start!" />
     <option name="LAST_COMMIT_MESSAGE" value="Start!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
