@@ -49,34 +49,45 @@ public class Check {
     }
 
     public static boolean checkAllDiagonal(Coordinates coordinates) {
+        return checkDiagonalOne(coordinates) || checkDiagonalTwo(coordinates);
+    }
+
+    private static boolean checkDiagonalOne(Coordinates coordinates) {
         int count = 0;
         winCount = getWinCount();
+        int row = coordinates.row - winCount;
+        int col = coordinates.column - winCount;
 
-        for (int row = coordinates.row - winCount; row < coordinates.row + winCount; row++) {
-            if (row >= 0 && row < field.sideLength) {
-                for (int col = coordinates.column - winCount; col < coordinates.column + winCount; col++) {
-                    if (col >= 0 && col < field.sideLength) {
-                        if (field.currentField[row][col].equals(currentPlayer.getPlayerSymbol())) {
-                            count++;
-                            if (count == winCount) {
-                                return true;
-                            }
-                        }
+        for (int i = 0; i <= winCount * 2; i++) {
+            int currentRow = row + i;
+            int currentCol = col + i;
+            if (isValidPosition(currentRow, currentCol)) {
+                if (field.currentField[currentRow][currentCol].equals(currentPlayer.getPlayerSymbol())) {
+                    count++;
+                    if (count == winCount) {
+                        return true;
                     }
                 }
             }
         }
 
-        for (int row = coordinates.row + winCount; row < coordinates.row - winCount; row--) {
-            if (row >= 0 && row < field.sideLength) {
-                for (int col = coordinates.column + winCount; col < coordinates.column - winCount; col--) {
-                    if (col >= 0 && col < field.sideLength) {
-                        if (field.currentField[row][col].equals(currentPlayer.getPlayerSymbol())) {
-                            count++;
-                            if (count == winCount) {
-                                return true;
-                            }
-                        }
+        return false;
+    }
+
+    private static boolean checkDiagonalTwo(Coordinates coordinates) {
+        int count = 0;
+        winCount = getWinCount();
+        int row = coordinates.row - winCount;
+        int col = coordinates.column + winCount;
+
+        for (int i = 0; i <= winCount * 2; i++) {
+            int currentRow = row + i;
+            int currentCol = col - i;
+            if (isValidPosition(currentRow, currentCol)) {
+                if (field.currentField[currentRow][currentCol].equals(currentPlayer.getPlayerSymbol())) {
+                    count++;
+                    if (count == winCount) {
+                        return true;
                     }
                 }
             }
@@ -96,6 +107,11 @@ public class Check {
             winCount = 5;
         }
         return winCount;
+    }
+
+    private static boolean isValidPosition(int row, int col) {
+        return row >= 0 && row < field.sideLength &&
+                col >= 0 && col < field.sideLength;
     }
 
 }
