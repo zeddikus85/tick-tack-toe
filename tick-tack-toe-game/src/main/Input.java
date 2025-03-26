@@ -10,6 +10,11 @@ public class Input {
         return Integer.parseInt(scanner.nextLine());
     }
 
+    public static String getPlayerName(String player) {
+        System.out.print("Enter name for " + player + ": ");
+        return scanner.nextLine();
+    }
+
     public static Coordinates nextMove() {
         System.out.print("Enter row number: ");
         int row = Integer.parseInt(scanner.nextLine());

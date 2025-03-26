@@ -1,7 +1,5 @@
 package main;
 
-import static main.Main.player;
-
 public class Output {
 
     public static void printPrepare() {
@@ -14,16 +12,23 @@ public class Output {
     }
 
     public static void printField(String[][] field) {
-        for (String[] strings : field) {
-            for (String string : strings) {
-                System.out.print(string + " ");
+        System.out.print("   ");
+        for (int col = 0; col < field.length; col++) {
+            System.out.printf("%-2d ", col + 1);
+        }
+        System.out.println();
+
+        for (int row = 0; row < field.length; row++) {
+            System.out.printf("%-2d ", row + 1);
+            for (String cell : field[row]) {
+                System.out.printf("%-2s ", cell);
             }
             System.out.println();
         }
     }
 
-    public static void printCurrentPlayerMove() {
-        System.out.println("Player " + player.currentPlayer + " move");
+    public static void printCurrentPlayerMove(String name) {
+        System.out.println("Player " + name + " move");
     }
 
 }

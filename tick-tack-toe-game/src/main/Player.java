@@ -2,14 +2,19 @@ package main;
 
 public class Player {
 
-    String currentPlayer = "X";
+    String playerSymbol;
+    String playerName;
 
-    public void changePlayer() {
-        if (this.currentPlayer.equals("0")) {
-            this.currentPlayer = "X";
-        } else {
-            this.currentPlayer = "0";
-        }
+    public Player(String symbol, String name) {
+        this.playerSymbol = symbol;
+        this.playerName = name;
     }
 
+    public String getPlayerSymbol() {
+        return this.playerSymbol;
+    }
+
+    public String getPlayerName() {
+        return this.playerName;
+    }
 }

@@ -1,11 +1,14 @@
 package main;
 
-import static main.Сheck.checkForWin;
+import static main.Check.checkForWin;
 
 public class Main {
     static boolean gameOver = true;
     static Field field;
-    static Player player = new Player();
+    static Player playerX;
+    static Player player0;
+    static Player currentPlayer;
+    static String playerName;
     static Coordinates currentMoveCoordinates;
 
     public static void main(String[] args) {
@@ -14,21 +17,32 @@ public class Main {
         int fieldLength = Input.fieldLength();
         field = new Field(fieldLength);
 
+        playerName = Input.getPlayerName("X");
+        playerX = new Player("X", playerName);
+        playerName = Input.getPlayerName("0");
+        player0 = new Player("0", playerName);
+
+        currentPlayer = playerX;
+
         Output.printStartGame();
         Output.printField(field.currentField);
 
         while (gameOver) {
-            Output.printCurrentPlayerMove();
+            Output.printCurrentPlayerMove(currentPlayer.playerName);
             currentMoveCoordinates = Utils.convertToMassivCoordinates(Input.nextMove());
-            field.addMove(currentMoveCoordinates, player.currentPlayer);
+            field.addMove(currentMoveCoordinates, currentPlayer.getPlayerSymbol());
+            Output.printField(field.currentField);
 
             if (checkForWin(currentMoveCoordinates)) {
                 gameOver = false;
-                System.out.println("!!! Player '" + player.currentPlayer + "' win !!!");
+                System.out.println("!!! Player '" + currentPlayer.playerName + "' win !!!");
             }
-            player.changePlayer();
 
-            Output.printField(field.currentField);
+            if (currentPlayer == playerX) {
+                currentPlayer = player0;
+            } else {
+                currentPlayer = playerX;
+            }
         }
 
     }
