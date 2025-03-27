@@ -9,6 +9,4 @@ public class Coordinates {
         this.column = column;
     }
 
-
-
 }

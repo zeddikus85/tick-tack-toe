@@ -1,18 +1,20 @@
 package com.tick_tack_toe_game;
 
-import static com.tick_tack_toe_game.Main.currentPlayer;
-import static com.tick_tack_toe_game.Main.field;
+import static com.tick_tack_toe_game.Utils.getWinCount;
 
 public class Check {
     private static int winCount;
 
-    public static boolean checkForWin(Coordinates newMove) {
-        return checkRow(newMove) || checkColumn(newMove) || checkAllDiagonal(newMove);
+    public static boolean checkForWin(Coordinates newMove, Player currentPlayer, Field field) {
+        int winCount = getWinCount(field);
+        return checkRow(newMove, currentPlayer, field, winCount)
+                || checkColumn(newMove, currentPlayer, field, winCount)
+                || checkDiagonalOne(newMove, currentPlayer, field, winCount)
+                || checkDiagonalTwo(newMove, currentPlayer, field, winCount);
     }
 
-    private static boolean checkRow(Coordinates coordinates) {
+    private static boolean checkRow(Coordinates coordinates, Player currentPlayer, Field field, int winCount) {
         int count = 0;
-        winCount = getWinCount();
 
         for (int i = coordinates.column - winCount; i < coordinates.column + winCount; i++) {
             if (i >= 0 && i < field.sideLength) {
@@ -29,9 +31,8 @@ public class Check {
         return false;
     }
 
-    private static boolean checkColumn(Coordinates coordinates) {
+    private static boolean checkColumn(Coordinates coordinates, Player currentPlayer, Field field, int winCount) {
         int count = 0;
-        winCount = getWinCount();
 
         for (int i = coordinates.row - winCount; i < coordinates.row + winCount; i++) {
             if (i >= 0 && i < field.sideLength) {
@@ -48,20 +49,15 @@ public class Check {
         return false;
     }
 
-    public static boolean checkAllDiagonal(Coordinates coordinates) {
-        return checkDiagonalOne(coordinates) || checkDiagonalTwo(coordinates);
-    }
-
-    private static boolean checkDiagonalOne(Coordinates coordinates) {
+    private static boolean checkDiagonalOne(Coordinates newMove, Player currentPlayer, Field field, int winCount) {
         int count = 0;
-        winCount = getWinCount();
-        int row = coordinates.row - winCount;
-        int col = coordinates.column - winCount;
+        int row = newMove.row - winCount;
+        int col = newMove.column - winCount;
 
         for (int i = 0; i <= winCount * 2; i++) {
             int currentRow = row + i;
             int currentCol = col + i;
-            if (isValidPosition(currentRow, currentCol)) {
+            if (isValidPosition(currentRow, currentCol, field)) {
                 if (field.currentField[currentRow][currentCol].equals(currentPlayer.getPlayerSymbol())) {
                     count++;
                     if (count == winCount) {
@@ -74,16 +70,15 @@ public class Check {
         return false;
     }
 
-    private static boolean checkDiagonalTwo(Coordinates coordinates) {
+    private static boolean checkDiagonalTwo(Coordinates newMove, Player currentPlayer, Field field, int winCount) {
         int count = 0;
-        winCount = getWinCount();
-        int row = coordinates.row - winCount;
-        int col = coordinates.column + winCount;
+        int row = newMove.row - winCount;
+        int col = newMove.column + winCount;
 
         for (int i = 0; i <= winCount * 2; i++) {
             int currentRow = row + i;
             int currentCol = col - i;
-            if (isValidPosition(currentRow, currentCol)) {
+            if (isValidPosition(currentRow, currentCol, field)) {
                 if (field.currentField[currentRow][currentCol].equals(currentPlayer.getPlayerSymbol())) {
                     count++;
                     if (count == winCount) {
@@ -96,20 +91,7 @@ public class Check {
         return false;
     }
 
-    private static int getWinCount() {
-        if (field.sideLength == 3) {
-            winCount = 3;
-        }
-        if (field.sideLength == 4) {
-            winCount = 4;
-        }
-        if (field.sideLength >= 5) {
-            winCount = 5;
-        }
-        return winCount;
-    }
-
-    private static boolean isValidPosition(int row, int col) {
+    private static boolean isValidPosition(int row, int col, Field field) {
         return row >= 0 && row < field.sideLength &&
                 col >= 0 && col < field.sideLength;
     }
