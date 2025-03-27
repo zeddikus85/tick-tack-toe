@@ -1,7 +1,7 @@
-package main;
+package com.tick_tack_toe_game;
 
-import static main.Main.currentPlayer;
-import static main.Main.field;
+import static com.tick_tack_toe_game.Main.currentPlayer;
+import static com.tick_tack_toe_game.Main.field;
 
 public class Check {
     private static int winCount;

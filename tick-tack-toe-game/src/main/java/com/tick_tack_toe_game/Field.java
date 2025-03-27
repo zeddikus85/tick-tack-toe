@@ -1,4 +1,4 @@
-package main;
+package com.tick_tack_toe_game;
 
 public class Field {
     public String[][] currentField;

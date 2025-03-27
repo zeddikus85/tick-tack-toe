@@ -1,6 +1,6 @@
-package main;
+package com.tick_tack_toe_game;
 
-import static main.Check.checkForWin;
+import static com.tick_tack_toe_game.Check.*;
 
 public class Main {
     static boolean gameOver = true;
@@ -33,7 +33,7 @@ public class Main {
             field.addMove(currentMoveCoordinates, currentPlayer.getPlayerSymbol());
             Output.printField(field.currentField);
 
-            if (checkForWin(currentMoveCoordinates)) {
+            if (Check.checkForWin(currentMoveCoordinates)) {
                 gameOver = false;
                 System.out.println("!!! Player '" + currentPlayer.playerName + "' win !!!");
             }

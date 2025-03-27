@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d493b8a-2428-43be-bca7-30708d0c8551" name="Changes" comment="Start!">
-      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Сheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/main/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/src/main/java/com/tick_tack_toe_game/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tick-tack-toe-game/src/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tick-tack-toe-game/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.com.tick_tack_toe_game.Main.executor": "Run",
+    "Maven.autotests_2 [clean].executor": "Run",
+    "Maven.autotests_2 [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -68,8 +74,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Zeddikus\IdeaProjects\tick-tack-toe\tick-tack-toe-game\src" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zeddi\IdeaProjects\tick2\tick-tack-toe-game\src\main\java" />
+      <recent name="C:\Users\Zeddi\IdeaProjects\tick2\tick-tack-toe-game" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.com.tick_tack_toe_game.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="tick-tack-toe-game" />
@@ -83,8 +93,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.tick_tack_toe_game.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tick_tack_toe_game.Main" />
+      <module name="autotests_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="tick-tack-toe-game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="tick-tack-toe-game" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.tick_tack_toe_game.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
