@@ -1,21 +1,29 @@
 package com.tick_tack_toe_game;
 
+import java.util.Arrays;
+
 public class Field {
-    public String[][] currentField;
-    public int sideLength;
+    private final String[][] currentField;
+    private final int sideLength;
 
     public Field(int sideLength) {
         this.currentField = new String[sideLength][sideLength];
         this.sideLength = sideLength;
-        for (int i = 0; i < currentField.length; i++) {
-            for (int j = 0; j < currentField[i].length; j++) {
-                currentField[i][j] = ".";
-            }
+        for (String[] strings : currentField) {
+            Arrays.fill(strings, ".");
         }
     }
 
     public void addMove(Coordinates coordinates, String currentPlayer) {
         this.currentField[coordinates.row][coordinates.column] = currentPlayer;
+    }
+
+    public int getSideLength() {
+        return this.sideLength;
+    }
+
+    public String[][] getCurrentField() {
+        return this.currentField;
     }
 
 }

@@ -7,10 +7,10 @@ public class Utils {
     }
 
     public static int getWinCount(Field field) {
-        if (field.sideLength == 4) {
+        if (field.getSideLength() == 4) {
             return 4;
         }
-        if (field.sideLength >= 5) {
+        if (field.getSideLength() >= 5) {
             return 5;
         }
         return 3;
