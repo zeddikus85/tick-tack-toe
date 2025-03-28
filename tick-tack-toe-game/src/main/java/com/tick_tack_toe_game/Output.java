@@ -3,8 +3,14 @@ package com.tick_tack_toe_game;
 public class Output {
 
     public static void printPrepare() {
-        System.out.println("Setting up the game");
-        System.out.println("First you need to specify the field length");
+        System.out.println("""
+        Welcome to the game Tic Tac Toe
+            - Setting up the game -
+        The number of characters to win depends on the size of the field:
+        Length 3 - 3 characters are needed to win
+        Length 4 - 4 characters are needed to win
+        Length 5 or more - 5 characters are needed to win
+        """);
     }
 
     public static void printStartGame() {
