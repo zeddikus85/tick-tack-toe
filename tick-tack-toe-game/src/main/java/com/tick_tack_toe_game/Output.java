@@ -2,7 +2,7 @@ package com.tick_tack_toe_game;
 
 public class Output {
 
-    public static void printPrepare() {
+    public static void printGameIntroduction() {
         System.out.println("""
         Welcome to the game Tic Tac Toe
             - Setting up the game -
@@ -33,7 +33,7 @@ public class Output {
         }
     }
 
-    public static void printCurrentPlayerMove(String name) {
+    public static void printCurrentPlayerTurn(String name) {
         System.out.println("Player " + name + " move");
     }
 

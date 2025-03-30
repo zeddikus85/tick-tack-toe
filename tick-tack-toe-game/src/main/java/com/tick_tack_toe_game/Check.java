@@ -15,9 +15,9 @@ public class Check {
     private static boolean checkRow(Coordinates coordinates, Player currentPlayer, Field field, int winCount) {
         int count = 0;
 
-        for (int i = coordinates.column - winCount; i < coordinates.column + winCount; i++) {
-            if (i >= 0 && i < field.getSideLength()) {
-                if (field.getCurrentField()[coordinates.row][i].equals(currentPlayer.getPlayerSymbol())) {
+        for (int i = coordinates.getColumn() - winCount; i < coordinates.getColumn() + winCount; i++) {
+            if (i >= 0 && i < field.getSize()) {
+                if (field.getCurrentField()[coordinates.getRow()][i].equals(currentPlayer.getPlayerSymbol())) {
                     count++;
                     if (count == winCount) {
                         return true;
@@ -33,9 +33,9 @@ public class Check {
     private static boolean checkColumn(Coordinates coordinates, Player currentPlayer, Field field, int winCount) {
         int count = 0;
 
-        for (int i = coordinates.row - winCount; i < coordinates.row + winCount; i++) {
-            if (i >= 0 && i < field.getSideLength()) {
-                if (field.getCurrentField()[i][coordinates.column].equals(currentPlayer.getPlayerSymbol())) {
+        for (int i = coordinates.getRow() - winCount; i < coordinates.getRow() + winCount; i++) {
+            if (i >= 0 && i < field.getSize()) {
+                if (field.getCurrentField()[i][coordinates.getColumn()].equals(currentPlayer.getPlayerSymbol())) {
                     count++;
                     if (count == winCount) {
                         return true;
@@ -50,8 +50,8 @@ public class Check {
 
     private static boolean checkDiagonalOne(Coordinates newMove, Player currentPlayer, Field field, int winCount) {
         int count = 0;
-        int row = newMove.row - winCount;
-        int col = newMove.column - winCount;
+        int row = newMove.getRow() - winCount;
+        int col = newMove.getColumn() - winCount;
 
         for (int i = 0; i <= winCount * 2; i++) {
             int currentRow = row + i;
@@ -71,8 +71,8 @@ public class Check {
 
     private static boolean checkDiagonalTwo(Coordinates newMove, Player currentPlayer, Field field, int winCount) {
         int count = 0;
-        int row = newMove.row - winCount;
-        int col = newMove.column + winCount;
+        int row = newMove.getRow() - winCount;
+        int col = newMove.getColumn() + winCount;
 
         for (int i = 0; i <= winCount * 2; i++) {
             int currentRow = row + i;
@@ -91,8 +91,18 @@ public class Check {
     }
 
     private static boolean isValidPosition(int row, int col, Field field) {
-        return row >= 0 && row < field.getSideLength() &&
-                col >= 0 && col < field.getSideLength();
+        return row >= 0 && row < field.getSize() &&
+                col >= 0 && col < field.getSize();
     }
 
+    public static boolean checkForDraw(Field field) {
+        for (int i = 0; i < field.getSize(); i++) {
+            for (int y = 0; y < field.getSize(); y++) {
+                if (field.getCurrentField()[i][y].equals(".")) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
